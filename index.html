@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #222;
+        }
+        canvas {
+            background: #111;
+            border: 2px solid #0f0;
+        }
+        h1 {
+            color: #0f0;
+            text-align: center;
+        }
+        #restart-btn, .speed-btn {
+            display: inline-block;
+            margin: 8px 8px 0 0;
+            padding: 8px 18px;
+            font-size: 15px;
+            background: #0f0;
+            color: #111;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #restart-btn:hover, .speed-btn:hover {
+            background: #fff;
+            color: #0f0;
+        }
+        #score-board {
+            color: #fff;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+        #ranking-board {
+            color: #fff;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+        .speed-btn.selected {
+            background: #fff;
+            color: #0f0;
+            font-weight: bold;
+        }
+        #gameover-panel {
+            display: none;
+            background: rgba(0,0,0,0.85);
+            border: 2px solid #0f0;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 28px 40px;
+            border-radius: 12px;
+            text-align: center;
+            z-index: 10;
+        }
+        #game-container { position: relative; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Snake Game</h1>
+        <canvas id="game" width="400" height="400"></canvas>
+        <div style="text-align:center;">
+            <button class="speed-btn" data-speed="slow">느림</button>
+            <button class="speed-btn selected" data-speed="normal">보통</button>
+            <button class="speed-btn" data-speed="fast">빠름</button>
+        </div>
+        <div id="score-board"></div>
+        <div id="ranking-board"></div>
+        <p style="color:#fff; text-align:center;">Use arrow keys to play</p>
+        <div id="gameover-panel">
+            <div id="gameover-msg"></div>
+            <button id="restart-btn">Restart</button>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>
